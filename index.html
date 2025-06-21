@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Moja Top 10 filmów</title>
+</head>
+<body>
+  <h1>Twoja lista Top 10 filmów</h1>
+  <form id="top10form">
+    <input type="text" name="username" placeholder="Twoje imię" required><br><br>
+    
+    <input type="text" name="film1" placeholder="Film 1" required><br>
+    <input type="text" name="film2" placeholder="Film 2" required><br>
+    <input type="text" name="film3" placeholder="Film 3" required><br>
+    <input type="text" name="film4" placeholder="Film 4" required><br>
+    <input type="text" name="film5" placeholder="Film 5" required><br>
+    <input type="text" name="film6" placeholder="Film 6" required><br>
+    <input type="text" name="film7" placeholder="Film 7" required><br>
+    <input type="text" name="film8" placeholder="Film 8" required><br>
+    <input type="text" name="film9" placeholder="Film 9" required><br>
+    <input type="text" name="film10" placeholder="Film 10" required><br><br>
+    
+    <button type="submit">Stwórz moją listę</button>
+  </form>
+
+  <script>
+    document.getElementById('top10form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const data = new FormData(e.target);
+      
+      fetch("http://localhost:5678/webhook/top10", { // <-- Tu podaj swój adres webhooka n8n!
+        method: "POST",
+        body: data
+      }).then(() => {
+        alert("Twoja lista została wysłana! Wróć za chwilę po link.");
+      });
+    });
+  </script>
+</body>
+</html>
