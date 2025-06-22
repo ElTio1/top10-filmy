@@ -28,7 +28,7 @@
       e.preventDefault();
       const data = new FormData(e.target);
       
-      fetch("https://ea0c-45-149-208-140.ngrok-free.app/webhook/top10", { // <-- Tu podaj swój adres webhooka n8n!
+      fetch("https://ea0c-45-149-208-140.ngrok-free.app/webhook-test/top10", { // <-- Tu podaj swój adres webhooka n8n!
         method: "POST",
         body: data
       }).then(() => {
