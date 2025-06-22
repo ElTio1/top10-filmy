@@ -8,7 +8,7 @@
   <h1>Twoja lista Top 10 filmów</h1>
   <form id="top10form">
     <input type="text" name="username" placeholder="Twoje imię" required><br><br>
-    
+
     <input type="text" name="film1" placeholder="Film 1" required><br>
     <input type="text" name="film2" placeholder="Film 2" required><br>
     <input type="text" name="film3" placeholder="Film 3" required><br>
@@ -19,16 +19,16 @@
     <input type="text" name="film8" placeholder="Film 8" required><br>
     <input type="text" name="film9" placeholder="Film 9" required><br>
     <input type="text" name="film10" placeholder="Film 10" required><br><br>
-    
+
     <button type="submit">Stwórz moją listę</button>
   </form>
 
   <script>
-    document.getElementById('top10form').addEventListener('submit', function (e) {
+    document.getElementById("top10form").addEventListener('submit', function (e) {
       e.preventDefault();
       const data = new FormData(e.target);
-      
-      fetch("https://ea0c-45-149-208-140.ngrok-free.app/webhook-test/top10", { // <-- Tu podaj swój adres webhooka n8n!
+
+      fetch("https://ea0c-45-149-208-140.ngrok-free.app/webhook-test/top10", {
         method: "POST",
         body: data
       }).then(() => {
