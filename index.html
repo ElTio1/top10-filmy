@@ -28,7 +28,7 @@
       e.preventDefault();
       const data = new FormData(e.target);
       
-      fetch("http://localhost:5678/webhook-test/4bca9091-4462-4ad3-98af-1df19f3a252a", { // <-- Tu podaj swój adres webhooka n8n!
+      fetch("http://localhost:5678/webhook-test/top10", { // <-- Tu podaj swój adres webhooka n8n!
         method: "POST",
         body: data
       }).then(() => {
